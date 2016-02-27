@@ -7,7 +7,10 @@ $(document).ready(function(){
 		$.ajax({url: u,
 			dataType: "jsonp",
 			success: function(response){
-	    	$('.streamer-pic').append(response.stream.channel.logo);
+				var image = response.stream.channel.logo
+	    	$('.streamer-pic').css('background-image', 'url('+image+')');
+	    	$('.streamer-name').text(response.stream.channel.name);
+	    	$('.game').text(response.stream.channel.game);
 			}
 		});
 
