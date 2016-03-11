@@ -1,8 +1,9 @@
-.image {
-	}
-
+body {
+	background-color: #3c3a41 !important;
+}
 .image img {
 	margin-top: 10px;
+	margin-bottom: 10px;
 	padding: 3px;
 	height: 60px !important;
 }
@@ -16,14 +17,10 @@ ul {
 	padding-left: 0 !important;
 }
 
-li {
-	background-color: red;
-}
 
 .colu {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
-	
 }
 
 input {
@@ -31,17 +28,48 @@ input {
 
 }
 
+.data-cont {
+	padding: 0 !important;
+}
+
 .streamers {
 	margin-top: 5px;
 }
 
 .streamer {
-	height: 50px;
+	height: 80px;
 	background-color: green;
 	border-bottom: 1px solid white;
 }
 
-.streamer-pic {
+.pic-cont {
+	
+}
+
+.pic {
 	background-size: cover;
-	height: 50px;
+	width: 75px !important;
+	height: 75px !important;
+	border: 1px solid black;
+	border-radius: 50% !important;
+	margin-left: 10px;
+	margin-top: 3px;
+}
+
+.channel-name, .game {
+	height: 80px !important;
+}
+
+.hidden {
+	display: none;
+}
+
+.status {
+	color: white;
+	background-color: #6441a5;
+
+}
+.status:hover {
+	background-color: #7357A2;
+	cursor: pointer;
 }
