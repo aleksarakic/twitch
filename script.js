@@ -8,11 +8,11 @@ $(document).ready(function(){
 			success: function(response){
 				var channelName = url.substr(url.lastIndexOf('/')+1);
 				if(response.stream === null){
-					$('.streamers').append('<div class="streamer off"><div class="row"><div class="col-md-2 pic-cont"><div class="pic" style="background: url(images/A.gif); background-size: cover;"></div></div><div class="col-md-7 channel-name"><a href="http://twitch.tv/'+ channelName +'">'+channelName+'</a></div><div class="col-md-3 game">Not playing</div></div></div>');
+					$('.streamers').append('<div class="streamer off"><div class="row"><div class="col-md-2 pic-cont"><div class="pic" style="background: url(images/nosignal.png); background-size: cover;"></div></div><div class="col-md-7 channel-name"><a class="streamer-link" href="http://twitch.tv/'+ channelName +'">'+channelName+'</a></div><div class="col-md-3 game">Offline</div></div></div>');
 				}else if(response.status === 422){
-					$('.streamers').append('<div class="streamer off"><div class="row"><div class="col-md-2 pic-cont"><div class="pic" style="background: url(images/A.gif); background-size: cover;"></div></div><div class="col-md-7 channel-name"><a href="http://twitch.tv/'+ channelName +'">'+channelName+'</a></div><div class="col-md-3 game">Dead channel</div></div></div>');
+					$('.streamers').append('<div class="streamer off"><div class="row"><div class="col-md-2 pic-cont"><div class="pic" style="background: url(images/nosignal.png); background-size: cover;"></div></div><div class="col-md-7 channel-name"><a class="streamer-link" href="http://twitch.tv/'+ channelName +'">'+channelName+'</a></div><div class="col-md-3 game">Dead channel</div></div></div>');
 				}else{
-					$('.streamers').prepend('<div class="streamer onl"><div class="row"><div class="col-md-2 pic-cont"><div class="pic" style="background: url('+response.stream.channel.logo+'); background-size: cover;"></div></div><div class="col-md-7 channel-name"><a href="http://twitch.tv/'+ response.stream.channel.name +'">'+response.stream.channel.name+'</a></div><div class="col-md-3 game">'+ response.stream.game+'</div></div>');
+					$('.streamers').prepend('<div class="streamer onl"><div class="row"><div class="col-md-2 pic-cont"><div class="pic" style="background: url('+response.stream.channel.logo+'); background-size: cover;"></div></div><div class="col-md-7 channel-name"><a class="streamer-link" href="http://twitch.tv/'+ response.stream.channel.name +'">'+response.stream.channel.name+'</a></div><div class="col-md-3 game">Playing: '+ response.stream.game+'<p id="viewers">Viewers: '+response.stream.viewers +'</p></div></div>');
 				}
 			}
 		});
@@ -35,10 +35,4 @@ $(document).ready(function(){
 			$('.off').removeClass('hidden');
 		});
 	});
-
-
 });
-
-
-	// var baseUrlForLogos = "https://api.twitch.tv/kraken/users/"
-	// var urlsForLogos = [baseUrlForLogos + "freecodecamp", baseUrlForLogos + "storbeck", baseUrlForLogos + "terakilobyte", baseUrlForLogos + "habathcx", baseUrlForLogos + "RobotCaleb", baseUrlForLogos + "thomasballinger", baseUrlForLogos + "noobs2ninjas", baseUrlForLogos + "beohoff", baseUrlForLogos + 'medrybw', baseUrlForLogos + 'ESL_SC2', baseUrlForLogos + "OgamingSC2", baseUrlForLogos + "comster404", baseUrlForLogos + "brunofin"];
